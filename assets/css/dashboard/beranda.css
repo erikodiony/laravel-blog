@@ -1,0 +1,25 @@
+.img-responsive {
+    margin: 0 auto;
+}
+
+#divider {
+	width: 0 auto;
+	margin-right: 30px;
+}
+
+.borderless tr td, .borderless tr th, .borderless tr th {
+	color: #000;
+    border: none;
+    padding: 1px;
+}
+
+.img-responsive {
+	width: 200px;
+	height: 200px;
+}
+
+@media (min-width:992px) {
+	#divider {
+		display: none;
+	}
+}

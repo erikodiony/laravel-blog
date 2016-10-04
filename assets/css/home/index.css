@@ -1,0 +1,325 @@
+@media (min-width: 992px)
+{
+    #cari-mobile {
+    display: none;
+  }
+
+    .navbar-default .navbar-nav .dropdown-menu {
+    background-color: #e7e7e7;
+  }
+
+  li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+  }
+
+  .dropdown-menu > li > a {
+    padding: 10px 20px;
+  } 
+
+  #cari-desktop:hover > ul.dropdown-menu {
+    display: block;
+  }
+
+}
+
+@media (max-width: 992px) {
+
+    .navbar-default .navbar-nav .open .dropdown-menu {
+    position: static;
+    background: transparent;
+    background-color: transparent;
+    float: none;
+    /*border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;*/
+  }
+
+
+  .navbar-default .navbar-nav .open .dropdown-menu .dropdown-header,
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    padding: 10px 10px 10px 25px;
+  }
+
+  .navbar-header {
+      float: none;
+  }
+
+  #cari-desktop {
+    display: none;
+  }
+
+  .navbar-left,.navbar-right {
+      float: none !important;
+      overflow-x: hidden;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      overflow-x: hidden;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+      margin-bottom: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+  .row {
+    margin-right: 0%; margin-left:0%;
+  }
+}
+
+  .masthead {
+    height: 105px;
+    background-color: #246B80;
+    background: url('../../img/banner.jpg') no-repeat center top;
+    background-size: cover;
+  }
+
+  #nav-affix.affix {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      animation: affixFadeIn 3s ease-out;
+      -webkit-animation: affixFadeIn 3s ease-out;
+  }
+
+  #nav-affix > .navbar.navbar-default {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .affix-top {
+    position: fixed;
+    width: 100%;
+  }
+
+  #masukan-affix.affix {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 10;
+  }
+
+  .affix-bottom {
+    position: fixed;
+    width: 100%;
+  }
+
+@keyframes affixFadeIn
+{
+from {opacity: 0.1;}
+to {opacity: 1;}
+}
+
+@-webkit-keyframes affixFadeIn 
+{
+from {opacity: 0.1;}
+to {opacity: 1;}
+}
+
+
+  .affix-top {
+      position: static;
+  }
+
+  .img-responsive {
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+
+  #produk-btn {
+    margin-bottom: 30px;
+  }
+
+  .row {
+    margin-right: 10%; margin-left:10%;
+  }
+
+  .navbar-default {
+  background: rgba(225,225,225, 0.75);
+  border-bottom: none;
+  /*margin-right: 15px;*/
+  }
+
+  .center-block {
+  text-align: center;
+  }
+
+  #promo-artikel {
+  /*background-image: url(../img/white-stripes.png);*/
+  /*border: 2px solid blue;*/
+  background-color: #fff;
+  height: 350px;
+  border-radius: 5px;
+  padding-right: 3px; 
+  padding-left: 3px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  margin-bottom: 30px;
+  color: #000;
+  }
+
+  #div-promo-isi {
+    overflow:scroll;
+    height: 180px;
+    overflow-x: hidden;
+  }
+  #div-artikel-isi {
+    overflow:scroll;
+    height: 180px;
+    overflow-x: hidden;
+  }
+
+  #isi-artikel {
+  /*background-image: url(../img/white-stripes.png);*/
+  /*border: 2px solid blue;*/
+  background-color: #fff;
+  height: 350px;
+  border-radius: 5px;
+  padding-right: 3px; 
+  padding-left: 3px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  margin-bottom: 30px;
+  }
+
+  .divider {
+    margin: 30px 0; /* Space out the Bootstrap <hr> more */
+  }
+
+    .strike {
+        display: block;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #000;
+    }
+
+    .strike > span {
+        position: relative;
+        display: inline-block;
+    }
+  
+    .strike > span:before,
+    .strike > span:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 9999px;
+        height: 2px;
+        background: #000;
+    }
+
+    .strike > span:before {
+        right: 100%;
+        margin-right: 12%;
+    }
+
+    .strike > span:after {
+        left: 100%;
+        margin-left: 12%;
+    }
+
+
+    .strike2 {
+        display: block;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #fff;
+    }
+
+    .strike2 > span {
+        position: relative;
+        display: inline-block;
+    }
+  
+    .strike2 > span:before,
+    .strike2 > span:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 9999px;
+        height: 2px;
+        background: #fff;
+    }
+
+    .strike2 > span:before {
+        right: 100%;
+        margin-right: 12%;
+    }
+
+    .strike2 > span:after {
+        left: 100%;
+        margin-left: 12%;
+    }
+
+    body {
+      background: url(../../img/bg.jpg);
+    }
+
+    .produk, footer {
+      background: url(../../img/placeholder.png);
+      color: #fff;
+    }
+
+    .navbar-default .navbar-nav > .active{
+      color: #fff;
+      background: #828282;
+    }
+    .navbar-default .navbar-nav > .active > a, 
+    .navbar-default .navbar-nav > .active > a:hover, 
+    .navbar-default .navbar-nav > .active > a:focus {
+      color: #fff;
+      background: #828282;
+    }
+
+    .navbar-collapse > ul > li:hover {
+      background:#C8C8C8;
+      cursor: pointer;
+    }
+
+    #promo-artikel > ul > li > a {
+      color: #000;
+    }
+
+    #link_navbar {
+      color: #000;
+    }
+
+    #cari-desktop2 {
+      background: rgba(195,195,195, 0.75);
+      background-image: url(../img/white-stripes.png);
+    }
+
+    .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+      color: #fff;
+      border: none;
+      padding: 1px;
+    }
+
+    a,
+    a:hover,
+    a:visited {
+      text-decoration: none !important;
+      color: #fff;
+    }
+
+
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+      color: #000;
+    }
