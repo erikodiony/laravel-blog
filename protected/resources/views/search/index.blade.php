@@ -49,7 +49,6 @@
         <table id="table-article" class="table dt-responsive" width="100%">
           <thead>
               <tr>
-                <th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                 <th><i class="fa fa-pencil fa-fw "></i>Judul</th>
                 <th><i class="fa fa-tag fa-fw "></i>Label</th>
               </tr>
@@ -57,7 +56,6 @@
           <tbody>
             @foreach ($all_result_article as $result_article)
             <tr>
-              <td>{{$result_article->created_at->format('Y-m-d')}}</td>
               <td><a href="{{url()}}/articles/view?id={{$result_article->id}}" style="color:#000;">{{$result_article->judul}}</a></td>
               <td>{{$result_article->tag}}</td>
             </tr>
@@ -69,7 +67,6 @@
         <table id="table-product" class="table dt-responsive" width="100%">
           <thead>
               <tr>
-                <th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                 <th><i class="fa fa-pencil fa-fw "></i>Judul</th>
                 <th><i class="fa fa-tag fa-fw "></i>Label</th>
               </tr>
@@ -77,7 +74,6 @@
           <tbody>
             @foreach ($all_result_product as $result_product)
             <tr>
-              <td>{{$result_product->created_at->format('Y-m-d')}}</td>
               <td><a href="{{url()}}/products/view?id={{$result_product->id}}" style="color:#000;">{{$result_product->judul}}</a></td>
               <td>{{$result_product->tag}}</td>
             </tr>
@@ -89,7 +85,6 @@
         <table id="table-promo" class="table dt-responsive" width="100%">
           <thead>
               <tr>
-                <th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                 <th><i class="fa fa-pencil fa-fw "></i>Judul</th>
                 <th><i class="fa fa-tag fa-fw "></i>Label</th>
               </tr>
@@ -97,7 +92,6 @@
           <tbody>
             @foreach ($all_result_promo as $result_promo)
             <tr>
-              <td>{{$result_promo->created_at->format('Y-m-d')}}</td>
               <td><a href="{{url()}}/promos/view?id={{$result_promo->id}}" style="color:#000;">{{$result_promo->judul}}</a></td>
               <td>{{$result_promo->tag}}</td>
             </tr>

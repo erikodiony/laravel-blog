@@ -323,11 +323,11 @@ to {opacity: 1;}
       color: #000;
     }
 
-    .item {
+    .item-testi {
       background: url(../../img/bg.jpg);
     }
 
-    .item.active {
+    .item-testi.active {
       height: auto;
     }
 

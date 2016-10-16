@@ -46,26 +46,7 @@
               <p><b><i class="fa fa-calendar fa-fw fa-lg"></i> <?php echo $show_byid_article->created_at->format('Y-m-d'); ?></b></p>
           </div>
           <div class="panel-body" style="padding:15px; font-size: 16px;">
-              <?php echo $show_byid_article->isi; ?>
-              <div class="col-lg-12 col-xs-12">
-                <div class="alert alert-success"></div>
-            </div>
-            <div class="col-lg-12 col-xs-12">
-                {!! Form::open(['url' => '/account/dashboard/contactme', 'method' => 'POST', 'class' => 'form-horizontal', 'id' => 'frm_contactme']) !!}
-                <div class="form-group">
-                    <label class="col-lg-2 col-md-2 col-xs-4 control-label"><i class="fa fa-user fa-fw"></i> Nama :</label>
-                    <div class="col-lg-10 col-md-10 col-xs-8">
-                        {!! Form::text('txt_user', '', ['class' => 'form-control'])!!}
-                    </div> 
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-2 col-md-2 col-xs-4 control-label"><i class="fa fa-comment fa-fw"></i> Isi :</label>
-                    <div class="col-lg-10 col-md-10 col-xs-8">
-                        {!! Form::textarea('txt_isi_comment', '', ['class' => 'form-control'])!!}
-                    </div>
-                </div>
-                {!! Form::close() !!}
-            </div>  
+              <?php echo $show_byid_article->isi; ?> 
           </div>
         </div>
       </div>

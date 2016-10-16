@@ -276,7 +276,7 @@
         <div class="carousel-inner" style="text-align: center; background: url(assets/img/bg.jpg);">
           <?php $i = 1;?>
           @foreach ($show_testi as $all_testi)
-          <div id="item_text_{{$i++}}" class="item">
+          <div id="item_text_{{$i++}}" class="item item-testi">
             <div class="carousel-content">
               <table id="table-testimoni" class="table dt-responsive" width="100%">
                 <tbody>
