@@ -54,7 +54,6 @@
         <table id="table-produk-1" class="table dt-responsive" width="100%">
         	<thead>
             	<tr>
-                	<th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                 	<th><i class="fa fa-pencil fa-fw "></i>Nama Item</th>
                 	<th><i class="fa fa-tag fa-fw "></i>Label</th>
               	</tr>
@@ -62,7 +61,6 @@
           	<tbody>
             @foreach ($show_product_1 as $all_product_1)
             <tr>
-            	<td>{{$all_product_1->created_at->format('Y-m-d')}}</td>
               	<td><a href="{{url()}}/products/view?id={{$all_product_1->id}}" style="color:#000;">{{$all_product_1->judul}}</a></td>
               	<td>{{$all_product_1->tag}}</td>
             </tr>
@@ -88,7 +86,6 @@
         <table id="table-produk-2" class="table dt-responsive" width="100%">
         	<thead>
             	<tr>
-                	<th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                 	<th><i class="fa fa-pencil fa-fw "></i>Nama Item</th>
                 	<th><i class="fa fa-tag fa-fw "></i>Label</th>
               	</tr>
@@ -96,7 +93,6 @@
           	<tbody>
             @foreach ($show_product_2 as $all_product_2)
             <tr>
-            	<td>{{$all_product_2->created_at->format('Y-m-d')}}</td>
               	<td><a href="{{url()}}/products/view?id={{$all_product_2->id}}" style="color:#000;">{{$all_product_2->judul}}</a></td>
               	<td>{{$all_product_2->tag}}</td>
             </tr>
@@ -122,7 +118,6 @@
         	<table id="table-produk-3" class="table dt-responsive" width="100%">
         	<thead>
             	<tr>
-                	<th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                 	<th><i class="fa fa-pencil fa-fw "></i>Nama Item</th>
                 	<th><i class="fa fa-tag fa-fw "></i>Label</th>
               	</tr>
@@ -130,7 +125,6 @@
           	<tbody>
             @foreach ($show_product_3 as $all_product_3)
             <tr>
-            	<td>{{$all_product_3->created_at->format('Y-m-d')}}</td>
               	<td><a href="{{url()}}/products/view?id={{$all_product_3->id}}" style="color:#000;">{{$all_product_3->judul}}</a></td>
               	<td>{{$all_product_3->tag}}</td>
             </tr>
@@ -156,7 +150,6 @@
         <table id="table-produk-4" class="table dt-responsive" width="100%">
         	<thead>
             	<tr>
-                	<th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                 	<th><i class="fa fa-pencil fa-fw "></i>Nama Item</th>
                 	<th><i class="fa fa-tag fa-fw "></i>Label</th>
               	</tr>
@@ -164,7 +157,6 @@
           	<tbody>
             @foreach ($show_product_4 as $all_product_4)
             <tr>
-            	<td>{{$all_product_4->created_at->format('Y-m-d')}}</td>
               	<td><a href="{{url()}}/products/view?id={{$all_product_4->id}}" style="color:#000;">{{$all_product_4->judul}}</a></td>
               	<td>{{$all_product_4->tag}}</td>
             </tr>
