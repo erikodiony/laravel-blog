@@ -17,7 +17,6 @@ Route::get('promos/view', 'ctrl_home@show_promo');
 Route::get('products/view', 'ctrl_home@show_product');
 
 Route::post('send_testimoni', 'ctrl_home@send_testimoni');
-Route::post('send_comment', 'ctrl_home@send_comment');
 Route::post('send_poll', 'ctrl_home@send_poll');
 //
 
@@ -93,5 +92,7 @@ Route::get('account/dashboard/feedback/testimoni_show', 'ctrl_umpan@show_testimo
 Route::post('account/dashboard/feedback/testimoni_edit', 'ctrl_umpan@edit_testimoni');
 Route::get('account/dashboard/feedback/testimoni_delete', 'ctrl_umpan@delete_testimoni');
 //
+
+//Menu Dashboard (Status)
 
 ?>
