@@ -48,7 +48,6 @@
               <table id="table-promo" class="table dt-responsive" width="100%">
                   <thead>
                       <tr>
-                        <th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                         <th><i class="fa fa-pencil fa-fw "></i>Judul</th>
                         <th><i class="fa fa-tag fa-fw "></i>Label</th>
                       </tr>
@@ -56,7 +55,6 @@
                   <tbody>
                     @foreach ($show_all_promo as $all_promo)
                     <tr>
-                      <td>{{$all_promo->created_at->format('Y-m-d')}}</td>
                       <td><a href="{{url()}}/promos/view?id={{$all_promo->id}}">{{$all_promo->judul}}</a></td>
                       <td>{{$all_promo->tag}}</td>
                     </tr>

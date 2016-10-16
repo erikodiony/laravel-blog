@@ -48,7 +48,6 @@
               <table id="table-artikel" class="table dt-responsive" width="100%">
                   <thead>
                       <tr>
-                        <th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                         <th><i class="fa fa-pencil fa-fw "></i>Judul</th>
                         <th><i class="fa fa-tag fa-fw "></i>Label</th>
                       </tr>
@@ -56,7 +55,6 @@
                   <tbody>
                     @foreach ($show_all_article as $all_article)
                     <tr>
-                      <td>{{$all_article->created_at->format('Y-m-d')}}</td>
                       <td><a href="{{url()}}/articles/view?id={{$all_article->id}}">{{$all_article->judul}}</a></td>
                       <td>{{$all_article->tag}}</td>
                     </tr>

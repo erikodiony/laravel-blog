@@ -83,14 +83,12 @@
                     <table id="table-artikel" class="table dt-responsive" width="100%">
                         <thead>
                             <tr>
-                              <th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                               <th><i class="fa fa-pencil fa-fw "></i>Judul</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach ($show_limit_article as $limit_article)
                         <tr>
-                          <td>{{$limit_article->created_at->format('Y-m-d')}}</td>
                           <td><a href="{{url()}}/articles/view?id={{$limit_article->id}}">{{$limit_article->judul}}</a></td>
                         </tr>
                         @endforeach
@@ -106,14 +104,12 @@
                     <table id="table-promo" class="table dt-responsive" width="100%">
                         <thead>
                             <tr>
-                              <th><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
                               <th><i class="fa fa-pencil fa-fw "></i>Judul</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach ($show_limit_promo as $limit_promo)
                         <tr>
-                          <td>{{$limit_promo->created_at->format('Y-m-d')}}</td>
                           <td><a href="{{url()}}/promos/view?id={{$limit_promo->id}}">{{$limit_promo->judul}}</a></td>
                         </tr>
                         @endforeach

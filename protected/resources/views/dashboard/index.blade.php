@@ -98,16 +98,6 @@
                 <a href="{{url()}}/account/dashboard/feedback"><span class="fa-stack fa-lg pull-left"><i class="fa fa-retweet fa-stack-1x "></i></span>Umpan Balik</a>
             </li>
             <hr style="border-color: #969696; border-width: 3px;">
-            <li>
-                <a href="{{url()}}/account/dashboard/setting"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cogs fa-stack-1x "></i></span>Pengaturan</a>
-            </li>
-            <li>
-                <a href="{{url()}}/account/dashboard/history"><span class="fa-stack fa-lg pull-left"><i class="fa fa-history fa-stack-1x "></i></span>Riwayat</a>
-            </li>
-            <li>
-                <a href="{{url()}}/account/dashboard/help"><span class="fa-stack fa-lg pull-left"><i class="fa fa-info fa-stack-1x "></i></span>Bantuan</a>
-            </li>
-            <hr style="border-color: #969696; border-width: 3px;">
             <li id="active">
                 <a href="{{url()}}" target="_blank"><span class="fa-stack fa-lg pull-left"><i class="fa fa-home fa-stack-1x "></i></span>Lihat Situs</a>
             </li>

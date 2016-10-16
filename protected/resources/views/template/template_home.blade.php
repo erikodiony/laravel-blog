@@ -44,12 +44,6 @@
               <div class="tab-content">
                 <div id="div-promo" class="tab-pane fade in active" role="tabpanel">
                     <table id="table-promo" class="table" width="100%">
-                        <thead>
-                            <tr>
-                              <th width="40%" style="text-align:center;"><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
-                              <th width="60%" style="text-align:left;"><i class="fa fa-pencil fa-fw "></i>Judul</th>
-                            </tr>
-                        </thead>
                         <tbody>
                         <tr>
                           <td colspan="2">
@@ -57,8 +51,7 @@
                               <table class="table" width="100%">
                               @foreach ($show_limit_promo as $limit_promo)
                               <tr style="border-top: 1px solid; border-bottom: 1px solid;">
-                                <td width="40%" style="text-align:center;">{{$limit_promo->created_at->format('Y-m-d')}}</td>
-                                <td width="60%" style="text-align:left"><a href="{{url()}}/promos/view?id={{$limit_promo->id}}" style="color:#000">{{$limit_promo->judul}}</a></td>
+                                <td width="100%" style="text-align:left"><a href="{{url()}}/promos/view?id={{$limit_promo->id}}" style="color:#000">{{$limit_promo->judul}}</a></td>
                               </tr>
                               @endforeach
                               </table>
@@ -75,12 +68,6 @@
                 </div>
                 <div id="div-artikel" class="tab-pane fade" role="tabpanel">
                     <table id="table-artikel" class="table" width="100%">
-                        <thead>
-                            <tr>
-                              <th width="40%" style="text-align:center;"><i class="fa fa-calendar fa-fw "></i>Tanggal</th>
-                              <th width="60%" style="text-align:left"><i class="fa fa-pencil fa-fw "></i>Judul</th>
-                            </tr>
-                        </thead>
                         <tbody>
                         <tr>
                           <td colspan="2">
@@ -88,8 +75,7 @@
                               <table class="table" width="100%">
                               @foreach ($show_limit_article as $limit_article)
                               <tr style="border-top: 1px solid; border-bottom: 1px solid;">
-                                <td width="40%" style="text-align:center;">{{$limit_article->created_at->format('Y-m-d')}}</td>
-                                <td width="60%" style="text-align:left"><a href="{{url()}}/articles/view?id={{$limit_article->id}}" style="color:#000">{{$limit_article->judul}}</a></td>
+                                <td width="100%" style="text-align:left"><a href="{{url()}}/articles/view?id={{$limit_article->id}}" style="color:#000">{{$limit_article->judul}}</a></td>
                               </tr>
                               @endforeach
                               </table>

@@ -213,14 +213,12 @@
 <div class="container-fluid">
     <div class="isi-post">
         <div class="row">
-        <h3 class="page-header"><i class="fa fa-rss fa-lg fa-fw"></i> Testimoni + <i class="fa fa-comment fa-lg fa-fw"></i> Komentar</h3>
+        <h3 class="page-header"><i class="fa fa-rss fa-lg fa-fw"></i> Testimoni</h3>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="table-responsive">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#" data-toggle="tab" role="tab" data-target="#div-testimoni"><i class="fa fa-rss fa-fw fa-lg"></i> Testimoni &nbsp;<span class="badge"><?php if($show_testi_pending->count() == 0) {echo '';}else {echo $show_testi_pending->count();}?></span></a></li>
-                            <li><a href="#" data-toggle="tab" role="tab" data-target="#div-promo"><i class="fa fa-usd fa-fw fa-lg"></i> Promo</a></li>
-                            <li><a href="#" data-toggle="tab" role="tab" data-target="#div-article"><i class="fa fa-newspaper-o fa-fw fa-lg"></i> Artikel</a></li>
                         </ul>
                         <div class="tab-content">
                             <div id="div-testimoni" class="tab-pane fade in active" role="tabpanel">
@@ -327,16 +325,6 @@
             </li>
             <li id="active">
                 <a href="{{url()}}/account/dashboard/feedback"><span class="fa-stack fa-lg pull-left"><i class="fa fa-retweet fa-stack-1x "></i></span>Umpan Balik</a>
-            </li>
-            <hr style="border-color: #969696; border-width: 3px;">
-            <li>
-                <a href="{{url()}}/account/dashboard/setting"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cogs fa-stack-1x "></i></span>Pengaturan</a>
-            </li>
-            <li>
-                <a href="{{url()}}/account/dashboard/history"><span class="fa-stack fa-lg pull-left"><i class="fa fa-history fa-stack-1x "></i></span>Riwayat</a>
-            </li>
-            <li>
-                <a href="{{url()}}/account/dashboard/help"><span class="fa-stack fa-lg pull-left"><i class="fa fa-info fa-stack-1x "></i></span>Bantuan</a>
             </li>
             <hr style="border-color: #969696; border-width: 3px;">
             <li id="active">
