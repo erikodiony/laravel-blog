@@ -9,10 +9,11 @@ use App\Http\Controllers\Controller;
 use View;
 use Auth;
 use Redirect;
-use App\about;
 use App\contact;
 use App\slide;
 use App\slide_product;
+use App\feedback;
+use App\poll;
 
 class ctrl_dashboard extends Controller
 {
@@ -20,11 +21,9 @@ class ctrl_dashboard extends Controller
    {
         if (Auth::check() == true) 
         {
-            $show_about = about::all()->first();
             $show_contact = contact::all()->first();
             $show_slide = slide::all();
-            return View('dashboard.index')->with('show_about',$show_about)
-                                          ->with('show_contact',$show_contact)
+            return View('dashboard.index')->with('show_contact',$show_contact)
                                           ->with('show_slide',$show_slide);
         } 
         else
@@ -77,7 +76,7 @@ class ctrl_dashboard extends Controller
    {
         if (Auth::check() == true) 
         {
-            return View('dashboard.stat');
+          return View('dashboard.stat');
         } 
         else
         {
@@ -89,7 +88,27 @@ class ctrl_dashboard extends Controller
    {
         if (Auth::check() == true) 
         {
-            return View('dashboard.feedback');
+          $show_testi = feedback::where('status', '!=', 'Pending')->get();
+          $show_testi_pending = feedback::where('status', 'Pending')->get();
+          $show_poll = poll::all();
+          $data = array(
+            'show_param1_a' => poll::where('param1','Bagus')->count(),
+            'show_param2_a' => poll::where('param1','Cukup')->count(),
+            'show_param3_a' => poll::where('param1','Jelek')->count(),
+            
+            'show_param1_b' => poll::where('param2','Bagus')->count(),
+            'show_param2_b' => poll::where('param2','Cukup')->count(),
+            'show_param3_b' => poll::where('param2','Jelek')->count(),
+
+            'show_param1_c' => poll::where('param3','Bagus')->count(),
+            'show_param2_c' => poll::where('param3','Cukup')->count(),
+            'show_param3_c' => poll::where('param3','Jelek')->count()
+            );
+
+          return View('dashboard.feedback')->with('show_testi', $show_testi)
+                                           ->with('show_testi_pending', $show_testi_pending)
+                                           ->with('show_poll', $show_poll)
+                                           ->with($data);
         } 
         else
         {

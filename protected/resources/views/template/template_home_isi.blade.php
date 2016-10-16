@@ -48,9 +48,9 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <li id="cari-mobile">
-                  <form method="POST" action="http://localhost/blog/account/dashboard/search" accept-charset="UTF-8">
+                  <form method="GET" action="{{url()}}/search" accept-charset="UTF-8">
                     <div class="input-group col-sm-12" style="padding-left:10px; padding-right:10px;">
-                      <input placeholder="Produk / Artikel..." class="form-control" name="user" type="text" id="input_cari">
+                      <input placeholder="Produk / Artikel / Promo..." class="form-control" name="q" type="text" id="input_cari">
                       <span class="input-group-btn">
                       <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Cari</button>
                       </span>
@@ -62,9 +62,9 @@
                   <a style="color:#000;" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-search fa-fw"></i> Cari</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                       <li style="width:500px">
-                        <form method="POST" action="http://localhost/blog/account/dashboard/search">
+                        <form method="GET" action="{{url()}}/search">
                           <div class="input-group col-sm-12" style="padding-left:10px; padding-right:10px;">
-                            <input placeholder="Produk / Artikel..." class="form-control" name="user" type="text" id="input_cari">
+                            <input placeholder="Artikel / Produk / Promo..." class="form-control" name="q" type="text" id="input_cari">
                             <span class="input-group-btn">
                             <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Cari</button>
                             </span>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>CCTVQu | Melayani Pemasangan dan Instalasi berbagai macam produk CCTV dengan harga Berkualitas</title>
+    <title>CCTVQu | Melayani Pemasangan dan Instalasi berbagai macam produk CCTV</title>
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
@@ -31,9 +31,6 @@
   </header>
 
 @yield('navbar')
-
-
-
 
 <body>
   <div class="row">
@@ -113,38 +110,10 @@
   </div>
 
 <div class="produk">
-    
 @yield('slide_product')
-
 </div>
-
-    <div class="row animatedParent animateOnce" style="text-align:center;">
-      <div class="col-md-4" style="height:350px;">
-        <div class="strike animated shake slower delay-250">
-          <span><h4><i class="fa fa-smile-o fa-fw"></i> Tentang Kami</h4></span>
-        </div>
-      </div>
-      <div class="col-md-4" style="height:350px;">
-        <div class="strike animated shake slower delay-250">
-          <span><h4><i class="fa fa-photo fa-fw"></i> Foto</h4></span>
-        </div>
-      </div>
-      <div class="col-md-4" style="height:350px;">
-        <div class="strike animated shake slower delay-250">
-          <span><h4><i class="fa fa-retweet fa-fw"></i> Testimoni</h4></span>
-        </div>  
-      </div>
-    </div>
-
-    <div id="masukan-affix" data-spy="affix" data-offset-bottom="0">
-      <div class="masukan" style="background-color:#BBBBBB; ">
-        <div class="row" style="margin-right:1%; margin-left:1%; padding:10px; text-align:center;">
-          <div class="col-sm-8 col-sm-offset-2">
-            <h4>Berikan tanggapan mengenai situs kami ! <i class="fa fa-smile-o fa-fw"></i></h4><a class="btn btn-primary">KLIK</a>
-          </div>
-        </div>
-      </div>
-    </div>
+@yield('menu_horizontal')
+@yield('banner_masukan')
 
 </body>
 
@@ -229,15 +198,16 @@
       <h6>
       <a href="http://fb.me/erikodiony" target="_blank">TEAM-IT</a>
       <strong style="color:#fff;"> | </strong> 
-      <a href="http://localhost/blog" target="_blank">CCTVQu - 2016</a>
+      <a href="{{url()}}" target="_blank">CCTVQu - 2016</a>
       </h6>
       </div>
     </div>
   </div>
 
+@yield('popup')
+
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/animate/css3-animate-it.js"></script>
   <script src="assets/js/home/index.js"></script>
-
 </html>

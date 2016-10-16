@@ -155,12 +155,12 @@
                                 <table id="table-promo" class="table dt-responsive" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Judul</th>
-                                            <th><i class="fa fa-tag fa-fw "></i>Label</th>
-                                            <th><i class="fa fa-user fa-fw "></i>Pengguna</th>
-                                            <th><i class="fa fa-calendar fa-fw "></i>Diposkan</th>
-                                            <th>Aksi</th>
+                                            <th><i class="fa fa-th-list fa-fw "></i> ID</th>
+                                            <th><i class="fa fa-thumb-tack fa-fw"></i> Judul</th>
+                                            <th><i class="fa fa-tag fa-fw "></i> Label</th>
+                                            <th><i class="fa fa-user fa-fw "></i> Pengguna</th>
+                                            <th><i class="fa fa-calendar fa-fw "></i> Diposkan</th>
+                                            <th><i class="fa fa-th fa-fw "></i> Aksi</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -169,12 +169,12 @@
                                 <table id="table-article" class="table dt-responsive" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Judul</th>
-                                            <th><i class="fa fa-tag fa-fw "></i>Label</th>
-                                            <th><i class="fa fa-user fa-fw "></i>Pengguna</th>
-                                            <th><i class="fa fa-calendar fa-fw "></i>Diposkan</th>
-                                            <th>Aksi</th>
+                                            <th><i class="fa fa-th-list fa-fw "></i> ID</th>
+                                            <th><i class="fa fa-thumb-tack fa-fw"></i> Judul</th>
+                                            <th><i class="fa fa-tag fa-fw "></i> Label</th>
+                                            <th><i class="fa fa-user fa-fw "></i> Pengguna</th>
+                                            <th><i class="fa fa-calendar fa-fw "></i> Diposkan</th>
+                                            <th><i class="fa fa-th fa-fw "></i> Aksi</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -183,12 +183,12 @@
                                 <table id="table-concept" class="table dt-responsive" width="100%">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Judul</th>
-                                            <th><i class="fa fa-tasks fa-fw "></i>Jenis</th>
-                                            <th><i class="fa fa-user fa-fw "></i>Pengguna</th>
-                                            <th><i class="fa fa-calendar fa-fw "></i>Dikonsepkan</th>
-                                            <th>Aksi</th>
+                                            <th><i class="fa fa-th-list fa-fw "></i> ID</th>
+                                            <th><i class="fa fa-thumb-tack fa-fw"></i> Judul</th>
+                                            <th><i class="fa fa-tasks fa-fw "></i> Jenis</th>
+                                            <th><i class="fa fa-user fa-fw "></i> Pengguna</th>
+                                            <th><i class="fa fa-calendar fa-fw "></i> Dikonsepkan</th>
+                                            <th><i class="fa fa-th fa-fw "></i> Aksi</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -288,9 +288,9 @@
                                 <table id="table-about" class="table dt-responsive" width="100%">
                                     <thead>
                                         <tr>
-                                            <th><i class="fa fa-user fa-fw "></i>Pengguna</th>
-                                            <th><i class="fa fa-calendar fa-fw "></i>Diposkan</th>
-                                            <th>Aksi</th>
+                                            <th><i class="fa fa-user fa-fw "></i> Pengguna</th>
+                                            <th><i class="fa fa-calendar fa-fw "></i> Diposkan</th>
+                                            <th><i class="fa fa-th fa-fw "></i> Aksi</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -299,9 +299,9 @@
                                 <table id="table-portofolio" class="table dt-responsive" width="100%">
                                     <thead>
                                         <tr>
-                                            <th><i class="fa fa-user fa-fw "></i>Pengguna</th>
-                                            <th><i class="fa fa-calendar fa-fw "></i>Diposkan</th>
-                                            <th>Aksi</th>
+                                            <th><i class="fa fa-user fa-fw "></i> Pengguna</th>
+                                            <th><i class="fa fa-calendar fa-fw "></i> Diposkan</th>
+                                            <th><i class="fa fa-th fa-fw "></i> Aksi</th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -336,27 +336,22 @@
             <li>
                 <a href="{{url()}}/account/dashboard/feedback"><span class="fa-stack fa-lg pull-left"><i class="fa fa-retweet fa-stack-1x "></i></span>Umpan Balik</a>
             </li>
-            <li>
-                <a href="{{url()}}/account/dashboard/history"><span class="fa-stack fa-lg pull-left"><i class="fa fa-history fa-stack-1x "></i></span>Riwayat</a>
-            </li>
+            <hr style="border-color: #969696; border-width: 3px;">
             <li>
                 <a href="{{url()}}/account/dashboard/setting"><span class="fa-stack fa-lg pull-left"><i class="fa fa-cogs fa-stack-1x "></i></span>Pengaturan</a>
             </li>
             <li>
+                <a href="{{url()}}/account/dashboard/history"><span class="fa-stack fa-lg pull-left"><i class="fa fa-history fa-stack-1x "></i></span>Riwayat</a>
+            </li>
+            <li>
                 <a href="{{url()}}/account/dashboard/help"><span class="fa-stack fa-lg pull-left"><i class="fa fa-info fa-stack-1x "></i></span>Bantuan</a>
+            </li>
+            <hr style="border-color: #969696; border-width: 3px;">
+            <li id="active">
+                <a href="{{url()}}" target="_blank"><span class="fa-stack fa-lg pull-left"><i class="fa fa-home fa-stack-1x "></i></span>Lihat Situs</a>
             </li>
         </ul>
     </div>
-@endsection
-
-@section('dir')
-    <ul class="breadcrumb">
-        <li><a id="footer_link" href="/blog/account/dashboard"><span class="glyphicon glyphicon-home"></span></a></li>
-        <li><a id="footer_link" href="/blog/account/dashboard/product"><span class="glyphicon glyphicon-shopping-cart"></span> Produk</a></li>
-        <li><a id="footer_link" href="/blog/account/dashboard/product"><span class="glyphicon glyphicon-shopping-cart"></span> Produk</a></li>
-        <li><a id="footer_link" href="/blog/account/dashboard/product"><span class="glyphicon glyphicon-shopping-cart"></span> Produk</a></li>
-        <li><a id="footer_link" href="/blog/account/dashboard/product"><span class="glyphicon glyphicon-shopping-cart"></span> Produk</a></li>
-    </ul>
 @endsection
 
 @section('mdl_custom')
@@ -584,6 +579,10 @@
     </div>
   </div>
 </div>
+@endsection
+
+
+@section('script')
 
 {!! Html::script('assets/js/bootstrap-filestyle.min.js')!!}
 {!! Html::script('assets/js/dashboard/pos.js') !!}
@@ -593,8 +592,6 @@
 {!! Html::script('assets/js/bootstrap-select/bootstrap-select.min.js') !!}
 
 
-
-@push('script')
 <script type="text/javascript">
 $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
         $($.fn.dataTable.tables(true)).DataTable()
@@ -681,8 +678,5 @@ $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
             }
         ]
     });
-
 </script>
-@endpush
-
 @endsection

@@ -45,15 +45,6 @@
     color: #000;
 }
 
-#footer_link {
-    text-decoration: none;
-    color: #7F7F7F;
-}
-
-#footer_link:hover, #footer_link:active {
-    color: #000;
- }
-
 .navbar-fixed-bottom.toggled-3 {
     height: 80px;
 }

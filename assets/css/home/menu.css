@@ -4,7 +4,7 @@
     display: none;
   }
 
-    .navbar-default .navbar-nav .dropdown-menu {
+  .navbar-default .navbar-nav .dropdown-menu {
     background-color: #e7e7e7;
   }
 
@@ -23,29 +23,45 @@
 }
 
 @media (max-width: 992px) {
-
-    .navbar-default .navbar-nav .open .dropdown-menu {
+  
+  .navbar-default .navbar-nav .open .dropdown-menu {
     position: static;
     background: transparent;
-    background-color: transparent;
+    background-color: transparent !important;
     float: none;
     /*border: 0;
     -webkit-box-shadow: none;
     box-shadow: none;*/
   }
 
+  li.dropdown.open {
+    background: transparent !important;
+  }
 
   .navbar-default .navbar-nav .open .dropdown-menu .dropdown-header,
   .navbar-default .navbar-nav .open .dropdown-menu>li>a {
     padding: 10px 10px 10px 25px;
   }
 
-  .navbar-header {
-      float: none;
-  }
 
   #cari-desktop {
     display: none;
+  }
+
+  #promo-affix.affix {
+    position: static !important;
+  }
+
+  #promo-affix.affix-top {
+    position: static !important;
+  }
+
+  #promo-affix.affix-bottom {
+    position: static !important;
+  }
+
+  .navbar-header {
+      float: none;
   }
 
   .navbar-left,.navbar-right {
@@ -60,10 +76,10 @@
       overflow-x: hidden;
   }
   .navbar-collapse.collapse {
-      display: none!important;
+      display: none !important;
   }
   .navbar-nav {
-      float: none!important;
+      float: none !important;
       margin-top: 7.5px;
       margin-bottom: 7.5px;
   }
@@ -82,6 +98,23 @@
   }
 }
 
+
+  #nav-affix > .navbar.navbar-default {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .nav-tabs > li > a {
+    color: #000;
+  }
+
+  ol.breadcrumb > li > a {
+    color: #e5e5e5;
+  }
+
+  ol.breadcrumb > li.active > a {
+    color: #000;
+  }
+
   .masthead {
     height: 105px;
     background-color: #246B80;
@@ -89,64 +122,36 @@
     background-size: cover;
   }
 
+  .panel-heading {
+  border:0px; 
+  padding-top:5px; 
+  padding-bottom:5px; 
+  background-color:#bfbfbf !important;
+  }
+
   #nav-affix.affix {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-      animation: affixFadeIn 3s ease-out;
-      -webkit-animation: affixFadeIn 3s ease-out;
-  }
-
-  #nav-affix > .navbar.navbar-default {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-
-  .affix-top {
     position: fixed;
+    top: 0;
     width: 100%;
+    z-index:10;
+    animation: affixFadeIn 3s ease-out;
+    -webkit-animation: affixFadeIn 3s ease-out;
   }
 
-  #masukan-affix.affix {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 10;
-  }
-
-  .affix-bottom {
+  #promo-affix.affix {
     position: fixed;
-    width: 100%;
+    top: 65px;
+    left: 2%;
+    animation: affixFadeIn 2s ease-out;
+    -webkit-animation: affixFadeIn 2s ease-out;
   }
 
-@keyframes affixFadeIn
-{
-from {opacity: 0.1;}
-to {opacity: 1;}
-}
-
-@-webkit-keyframes affixFadeIn 
-{
-from {opacity: 0.1;}
-to {opacity: 1;}
-}
-
-
-  .affix-top {
-      position: static;
-  }
-
-  .img-responsive {
-    margin: 0 auto;
-    padding-top: 10px;
-  }
-
-  #produk-btn {
-    margin-bottom: 30px;
+   #promo-affix.affix-bottom {
+    position: relative;
   }
 
   .row {
-    margin-right: 10%; margin-left:10%;
+    margin-right: 3%; margin-left:3%;
   }
 
   .navbar-default {
@@ -155,47 +160,15 @@ to {opacity: 1;}
   /*margin-right: 15px;*/
   }
 
-  .center-block {
-  text-align: center;
+  #link-footer {
+    color:#000;
   }
 
-  #promo-artikel {
-  /*background-image: url(../img/white-stripes.png);*/
-  /*border: 2px solid blue;*/
-  background-color: #fff;
-  height: 350px;
-  border-radius: 5px;
-  padding-right: 3px; 
-  padding-left: 3px;
-  padding-bottom: 3px;
-  padding-top: 3px;
-  margin-bottom: 30px;
-  color: #000;
+  li.active > a#link_navbar {
+    color: #fff !important;
+    background-color: #828282;
   }
 
-  #div-promo-isi {
-    overflow:scroll;
-    height: 180px;
-    overflow-x: hidden;
-  }
-  #div-artikel-isi {
-    overflow:scroll;
-    height: 180px;
-    overflow-x: hidden;
-  }
-
-  #isi-artikel {
-  /*background-image: url(../img/white-stripes.png);*/
-  /*border: 2px solid blue;*/
-  background-color: #fff;
-  height: 350px;
-  border-radius: 5px;
-  padding-right: 3px; 
-  padding-left: 3px;
-  padding-bottom: 3px;
-  padding-top: 3px;
-  margin-bottom: 30px;
-  }
 
   .divider {
     margin: 30px 0; /* Space out the Bootstrap <hr> more */
@@ -234,7 +207,6 @@ to {opacity: 1;}
         margin-left: 12%;
     }
 
-
     .strike2 {
         display: block;
         text-align: center;
@@ -270,6 +242,7 @@ to {opacity: 1;}
 
     body {
       background: url(../../img/bg.jpg);
+      /*padding-top:75px;*/
     }
 
     .produk, footer {
@@ -277,19 +250,8 @@ to {opacity: 1;}
       color: #fff;
     }
 
-    .navbar-default .navbar-nav > .active{
-      color: #fff;
-      background: #828282;
-    }
-    .navbar-default .navbar-nav > .active > a, 
-    .navbar-default .navbar-nav > .active > a:hover, 
-    .navbar-default .navbar-nav > .active > a:focus {
-      color: #fff;
-      background: #828282;
-    }
-
     .navbar-collapse > ul > li:hover {
-      background:#C8C8C8;
+      background:transparent;
       cursor: pointer;
     }
 
@@ -298,12 +260,11 @@ to {opacity: 1;}
     }
 
     #link_navbar {
-      color: #000;
+      color: #000 !important;
     }
 
     #cari-desktop2 {
       background: rgba(195,195,195, 0.75);
-      background-image: url(../img/white-stripes.png);
     }
 
     .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
@@ -319,22 +280,52 @@ to {opacity: 1;}
       color: #fff;
     }
 
+
+    @keyframes affixFadeIn
+    {
+      from {opacity: 0.1;}
+      to {opacity: 1;}
+    }
+
+    @-webkit-keyframes affixFadeIn 
+    {
+      from {opacity: 0.1;}
+      to {opacity: 1;}
+    }
+
     .navbar-default .navbar-nav .open .dropdown-menu>li>a {
       color: #000;
     }
 
-    .item {
-      background: url(../../img/bg.jpg);
+    .sorting_asc, .sorting_desc, .sorting {
+      background-image: none !important;
     }
 
-    .item.active {
-      height: auto;
+    #table-artikel > tbody > tr > td > a {
+      color: #000;
     }
 
-    #carousel_text {
-      height: auto;
+    #table-promo > tbody > tr > td > a {
+      color: #000;
     }
 
+  #to-top.affix-top {
+    display: none;
+    position: relative;
+  }
 
-
-
+  #to-top.affix {
+    display: all;
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    z-index:10;
+    animation: affixFadeIn 3s ease-out;
+    -webkit-animation: affixFadeIn 3s ease-out;
+  }
+  
+  #collapse_1, #collapse_2, #collapse_3, #collapse_4 {
+    /*height: 250px;*/
+    animation: affixFadeIn 3s ease-out;
+    -webkit-animation: affixFadeIn 3s ease-out;
+  }

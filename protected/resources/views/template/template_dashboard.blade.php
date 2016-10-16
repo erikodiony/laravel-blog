@@ -12,29 +12,6 @@
 <a href="" id="navbar_kanan" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-out"></span> Keluar</a>
 @endsection
 
-@section('mdl_exit')
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false"> 
-  <div class="modal-dialog">
-    <div class="modal-content">
-    <!-- Header-->
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-log-out"></span> Keluar</h4>
-      </div>
-    <!-- Body --> 
-      <div class="modal-body">
-        <strong>Apakah Anda yakin ingin keluar ?</strong>
-        <br><i>(Pastikan terlebih dahulu semua Data telah tersimpan!)</i>
-      </div>
-    <!-- Footer --> 
-      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Tidak, Tutup Ini</button>
-        <button type="button" class="btn btn-primary" onClick="location.href='{{url()}}/account/logout'"><span class="glyphicon glyphicon-ok"></span> Ya, Keluar</button>
-      </div>
-    </div>
-  </div>
-</div>
-@endsection
-
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -95,20 +72,6 @@
 </div>
 <!-- /#wrapper -->
 
-<footer>
-     <div class="wrap text-center">
-        <ul class="nav navbar-nav navbar-fixed-bottom" style="align:center;" id="foot">
-            <i class="fa  fa-angle-up fa-2x fa-fw" id="footer_click" style="margin-top: -35px; cursor:pointer;"></i>
-        @yield('dir')
-            <ul style="margin-left:-22px; margin-top: -22px">
-                <strong><a style="text-decoration:none; color:#fff;" href="http://fb.me/erikodiony" target="_blank">TEAM-IT</a></strong>
-                    <strong style="color:#000;"> | </strong> 
-                 <strong><a style="text-decoration:none; color:#fff;" href="{{url()}}" target="_blank">CCTVQu - 2016</a></strong>
-            </ul>
-        </ul>
-    </div>
-</footer>
-
     {!! Html::script('assets/js/jquery.min.js') !!}
     {!! Html::script('assets/js/bootstrap.min.js') !!}
     {!! Html::script('assets/js/dashboard/sidebar.js') !!}
@@ -116,8 +79,27 @@
     {!! Html::script('assets/js/tinymce/tinymce-custom.js') !!}
 
 
-@yield('mdl_exit')
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false"> 
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <!-- Header-->
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-log-out"></span> Keluar</h4>
+      </div>
+    <!-- Body --> 
+      <div class="modal-body">
+        <strong>Apakah Anda yakin ingin keluar ?</strong>
+        <br><i>(Pastikan terlebih dahulu semua Data telah tersimpan!)</i>
+      </div>
+    <!-- Footer --> 
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Tidak, Tutup Ini</button>
+        <button type="button" class="btn btn-primary" onClick="location.href='{{url()}}/account/logout'"><span class="glyphicon glyphicon-ok"></span> Ya, Keluar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 @yield('mdl_custom')
-@stack('script')
+@yield('script')
 
 </html>

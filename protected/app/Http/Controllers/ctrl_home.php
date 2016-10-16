@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\about;
 use App\contact;
 use App\slide;
 use App\slide_product;
 use App\product;
 use App\post;
+use App\menu;
+use App\feedback;
+use App\poll;
 use Datatables;
 use Input;
 use Redirect;
@@ -24,18 +26,22 @@ class ctrl_home extends Controller
 
     public function show_index()
     {
-        $show_about = about::all()->first();
         $show_contact = contact::all()->first();
         $show_slide = slide::all();
         $show_slide_product = slide_product::all();
         $show_limit_article = post::limit(10)->where('jenis', 'Artikel')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
         $show_limit_promo = post::limit(10)->where('jenis', 'Promo')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
-        return View('home.index')->with('show_about',$show_about)
-                                      ->with('show_contact',$show_contact)
-                                      ->with('show_slide',$show_slide)
-                                      ->with('show_slide_product', $show_slide_product)
-                                      ->with('show_limit_promo', $show_limit_promo)
-                                      ->with('show_limit_article', $show_limit_article);
+        $menu_about = menu::all()->where('jenis', 'Tentang Kami')->first();
+        $show_testi = feedback::where('status', 'Tampilkan')->get();
+        $show_poll = poll::all();
+        return View('home.index')->with('menu_about', $menu_about)
+                                ->with('show_contact',$show_contact)
+                                ->with('show_slide',$show_slide)
+                                ->with('show_slide_product', $show_slide_product)
+                                ->with('show_limit_promo', $show_limit_promo)
+                                ->with('show_limit_article', $show_limit_article)
+                                ->with('show_testi', $show_testi)
+                                ->with('show_poll', $show_poll);
     }
 
     public function show_articles()
@@ -81,7 +87,7 @@ class ctrl_home extends Controller
         $show_contact = contact::all()->first();
         $show_limit_article = post::limit(5)->where('jenis', 'Artikel')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
         $show_limit_promo = post::limit(5)->where('jenis', 'Promo')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
-        $show_byid_article = post::all()->where('jenis', 'Artikel')->where('status', 'Publikasi')->where('id', $id_article)->first();
+        $show_byid_article = post::all()->where('jenis', 'Artikel')->where('status', 'Publikasi')->where('id', (int)$id_article)->first();
         if ($show_byid_article == null)
         {
             return Redirect::to('/articles');
@@ -102,7 +108,7 @@ class ctrl_home extends Controller
         $show_contact = contact::all()->first();
         $show_limit_article = post::limit(5)->where('jenis', 'Artikel')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
         $show_limit_promo = post::limit(5)->where('jenis', 'Promo')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
-        $show_byid_promo = post::all()->where('jenis', 'Promo')->where('status', 'Publikasi')->where('id', $id_promo)->first();
+        $show_byid_promo = post::all()->where('jenis', 'Promo')->where('status', 'Publikasi')->where('id', (int)$id_promo)->first();
         if ($show_byid_promo == null)
         {
             return Redirect::to('/promos');
@@ -132,7 +138,7 @@ class ctrl_home extends Controller
         $show_limit_produk_3 = product::limit(5)->where('tag', $label_produk[2])->where('status', 'Publikasi')->orderBy('id','DESC')->get();
         $show_limit_produk_4 = product::limit(5)->where('tag', $label_produk[3])->where('status', 'Publikasi')->orderBy('id','DESC')->get();
         
-        $show_byid_produk = product::all()->where('status', 'Publikasi')->where('id', $id_produk)->first();
+        $show_byid_produk = product::all()->where('status', 'Publikasi')->where('id', (int)$id_produk)->first();
         if ($show_byid_produk == null)
         {
             return Redirect::to('/products');
@@ -149,6 +155,86 @@ class ctrl_home extends Controller
                 ->with('show_byid_produk', $show_byid_produk);
         }
 
+    }
+
+    public function show_portofolio()
+    {
+        $show_contact = contact::all()->first();
+        $menu_portofolio = menu::all()->where('jenis', 'Portofolio')->first();
+        $menu_about = menu::all()->where('jenis', 'Tentang Kami')->first();
+        return View('portofolio.index')
+            ->with('show_contact', $show_contact)
+            ->with('menu_portofolio', $menu_portofolio)
+            ->with('menu_about', $menu_about);
+    }
+
+    public function show_about()
+    {
+        $show_contact = contact::all()->first();
+        $menu_portofolio = menu::all()->where('jenis', 'Portofolio')->first();
+        $menu_about = menu::all()->where('jenis', 'Tentang Kami')->first();
+        return View('about.index')
+            ->with('show_contact', $show_contact)
+            ->with('menu_portofolio', $menu_portofolio)
+            ->with('menu_about', $menu_about);
+    }
+
+    public function show_search()
+    {
+        $query = Input::get('q');
+        if (isset($query) == null)
+        {
+            return Redirect::to('/');
+        }
+        else
+        {
+            $show_contact = contact::all()->first();
+            $all_result_article = post::where('status', 'Publikasi')->where('jenis','Artikel')->where('judul', 'LIKE', '%'.$query.'%')->get();
+            $all_result_promo = post::where('status', 'Publikasi')->where('jenis','Promo')->where('judul', 'LIKE', '%'.$query.'%')->get();
+            $all_result_product = product::where('status', 'Publikasi')->where('judul', 'LIKE', '%'.$query.'%')->get();
+            return View('search.index')
+                    ->with('query', $query)
+                    ->with('show_contact', $show_contact)
+                    ->with('all_result_article', $all_result_article)
+                    ->with('all_result_promo', $all_result_promo)
+                    ->with('all_result_product', $all_result_product);
+        }
+    }
+
+    public function send_testimoni(Request $req)
+    {
+        $testimoni_check = feedback::where('token', Input::get('_token'))->exists();
+        if ($testimoni_check == true) {
+            return ('error_token');
+        }
+        else {
+            $testimoni = new feedback;
+            $testimoni->isi = Input::get('txt_isi');
+            $testimoni->user = Input::get('txt_user');
+            $testimoni->status = 'Pending';
+            $testimoni->token = Input::get('_token');
+            $testimoni->ip = $req->ip();
+            $testimoni->save();
+            return ('success');
+        }
+    }
+
+    public function send_poll(Request $req)
+    {
+        $poll_check = poll::where('token', Input::get('_token'))->exists();
+        if ($poll_check == true) {
+            return ('error_token');
+        }
+        else {
+            $poll = new poll;
+            $poll->param1 = Input::get('txt_param1');
+            $poll->param2 = Input::get('txt_param2');
+            $poll->param3 = Input::get('txt_param3');
+            $poll->token = Input::get('_token');
+            $poll->ip = $req->ip();
+            $poll->save();
+            return ('success');
+        }
     }
 
 }
