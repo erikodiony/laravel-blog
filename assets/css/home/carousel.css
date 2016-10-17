@@ -13,7 +13,7 @@
 }
 
 .carousel-inner {
-  background-color: #fff;
+  background: url(assets/img/bg.jpg);
   overflow: hidden;
 }
 

@@ -201,6 +201,12 @@ class ctrl_home extends Controller
         }
     }
 
+    public function show_photo()
+    {
+        $show_contact = contact::all()->first();
+        return View('foto.index')->with('show_contact', $show_contact);
+    }
+
     public function send_testimoni(Request $req)
     {
         $testimoni_check = feedback::where('token', Input::get('_token'))->exists();

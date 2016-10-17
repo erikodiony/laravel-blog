@@ -11,6 +11,7 @@ Route::get('products', 'ctrl_home@show_products');
 Route::get('portofolio', 'ctrl_home@show_portofolio');
 Route::get('about', 'ctrl_home@show_about');
 Route::get('search','ctrl_home@show_search');
+Route::get('photos', 'ctrl_home@show_photo');
 
 Route::get('articles/view', 'ctrl_home@show_article');
 Route::get('promos/view', 'ctrl_home@show_promo');

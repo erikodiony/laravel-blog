@@ -243,10 +243,11 @@
     <div class="strike" style="text-align:center;">
       <span><h4><i class="fa fa-smile-o fa-fw"></i> Tentang Kami</h4></span>
     </div>
-    <table id="table-about" class="table dt-responsive" width="100%">
+        
+        <table id="table-about" class="table dt-responsive" width="100%">
       <tbody>
         <tr>
-          <td style="text-align: center;"><img style="max-width:180px; margin-top:-10px;" src="assets/img/logo.png"></td>
+          <td style="text-align: center; display: block"><img style="max-width:180px; margin-top:-10px;" src="assets/img/logo.png"></td>
         </tr>
         <tr>
           <td style="text-align: justify;"><?php echo substr($menu_about->isi, 0, 200) . ' (...)'?></td>
@@ -256,21 +257,41 @@
         </tr>
       </tbody>
     </table>
+
+    
   </div>
   <!--End Tentang Kami-->
 
   <!--Foto-->
-  <div class="col-md-4" >
-    <div class="strike animated shake slower delay-250">
+  <div class="col-md-4 animated shake slower delay-250" style="text-align: center; background: url(assets/img/bg.jpg);">
+    <div class="strike">
       <span><h4><i class="fa fa-photo fa-fw"></i> Foto</h4></span>
     </div>
-  </div> <!--End Foto-->
+
+      <div id="carousel_foto" class="carousel slide" data-ride="carousel" style="height: 100%">
+        <div class="carousel-inner" style="height: 100%">
+          <?php $i = 1;?>
+          @foreach ($show_testi as $all_testi)
+          <div id="item_img_{{$i++}}" class="item thumbnail-horizontal">
+            <div class="active item thumbnail">
+              <img src="http://localhost/blog/assets/img/uploads/slide/47976.jpg">
+            </div>
+          </div>
+          @endforeach                                
+        </div>
+    <div style="margin: 10px;">
+       <a href="{{url()}}/photos" style="color:#000;"><b><strong>Lihat Selengkapnya >></strong></b></a>
+    </div>
+
+      </div>
+  </div>
 
   <!--Testimoni-->
   <div class="col-md-4 animated shake slower delay-250" style="text-align: center;">
     <div class="strike">
       <span><h4><i class="fa fa-retweet fa-fw"></i> Testimoni</h4></span>
     </div>
+
     <div id="carousel_text" class="carousel slide" data-ride="carousel">
       <div class="col-xs-12">
         <div class="carousel-inner" style="text-align: center; background: url(assets/img/bg.jpg);">
@@ -298,9 +319,12 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12">
+
+    <div class="col-xs-12" style="margin-bottom: 10px;">
     <a href="#" type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#mdl_testimoni" style="color:#000;"><i class="fa fa-pencil fa-fw fa-lg"></i> Tulis Testimoni Anda</a>
     </div>
+
+
   </div> <!--End Testimoni-->
 </div>
 @endsection

@@ -11,7 +11,9 @@ $(document).ready(function() {
     $('#nav-affix + .row').css('margin-top', 0);
   });
 
-  $('#item_text_1').addClass('active');
+  $('#item_text_1').addClass('active'); //Carousel Testimoni
+
+  $('#item_img_1').addClass('active'); //Carousel Foto
 
 });
 
