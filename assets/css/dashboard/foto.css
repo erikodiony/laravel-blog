@@ -1,3 +1,7 @@
+.img-responsive {
+    margin: 0 auto;
+}
+
 #divider {
 	width: 0 auto;
 	margin-right: 30px;
@@ -7,12 +11,6 @@
 	color: #000;
     border: none;
     padding: 1px;
-}
-
-.img-responsive {
-	width: 200px;
-	height: 200px;
-	margin: 0 auto;
 }
 
 .table-responsive {

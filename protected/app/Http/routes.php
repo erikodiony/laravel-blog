@@ -97,8 +97,12 @@ Route::get('account/dashboard/feedback/testimoni_delete', 'ctrl_umpan@delete_tes
 
 //Menu Dashboard (Foto)
 Route::post('account/dashboard/photo/upload', 'ctrl_foto@upload');
-Route::get('account/dashboard/photo/upload/delete', 'ctrl_foto@upload_delete');
-Route::post('account/dashboard/photo/save', 'ctrl_foto@save');
+Route::get('account/dashboard/photo/upload/delete', 'ctrl_foto@upload_delete'); //Hapus Foto Upload Preview
+Route::post('account/dashboard/photo/save', 'ctrl_foto@save'); //Save Foto Upload
+
+Route::get('account/dashboard/photo/show', 'ctrl_foto@show'); //Show ID Foto
+Route::post('account/dashboard/photo/edit', 'ctrl_foto@edit'); //Save Edit Foto Upload
+Route::get('account/dashboard/photo/delete', 'ctrl_foto@delete'); //Hapus Foto Tersimpan
 //
 
 ?>

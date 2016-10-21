@@ -30,7 +30,7 @@
   <div class="a">
      <ol class="breadcrumb" style="background-color:#bfbfbf;">
       <li><a href="{{url()}}"><i class="fa fa-home fa-fw fa-lg"></i></a></li>
-      <li class="active"><a href="{{url()}}/products"><i class="fa fa-photo fa-fw fa-lg"></i> Foto</a></li>
+      <li class="active"><a href="{{url()}}/photos"><i class="fa fa-photo fa-fw fa-lg"></i> Foto</a></li>
     </ol>
   </div>
 @endsection
@@ -48,7 +48,7 @@
 @endsection
 
 @section('popup')
-  <!--Modal Testimoni-->
+<!--Modal Foto-->
 <div class="modal fade" id="mdl_photo" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false"> 
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -75,7 +75,7 @@
     </div>
   </div>
 </div>
-<!-- END Modal Testimoni-->
+<!-- END Modal Foto-->
 @endsection
 
 @section('skrip-js')
