@@ -519,7 +519,7 @@ $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
             {
                 data: null,
                 mRender: function(data,type,full){
-                return '<a href=" {{url()}}/products/view?id='+full[0]+'" target="_blank"><i class="fa fa- fa-external-link fa-lg fa-fw"></i></a> | <a href=" http://somepage.php?UID='+full[0]+'"><i class="fa fa-eye fa-lg fa-fw"></i></a> | <a href="#mdl_prod_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a> | <a href="#mdl_prod_hapus" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-trash fa-lg fa-fw"></i></a>';
+                return '<a href=" {{url()}}/products/view?id='+full[0]+'" target="_blank"><i class="fa fa- fa-external-link fa-lg fa-fw"></i></a> | <a href="#mdl_prod_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a> | <a href="#mdl_prod_hapus" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-trash fa-lg fa-fw"></i></a>';
                 }
             }
         ]
@@ -536,7 +536,7 @@ $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
             {
                 data: null,
                 mRender: function(data,type,full){
-                return '<a href=" http://somepage.php?UID='+full[0]+'"><i class="fa fa-eye fa-lg fa-fw"></i></a> | <a href="#mdl_prod_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a> | <a href="#mdl_prod_hapus" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-trash fa-lg fa-fw"></i></a>';
+                return '<a href="#mdl_prod_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a> | <a href="#mdl_prod_hapus" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-trash fa-lg fa-fw"></i></a>';
                 }
             }
         ]

@@ -15,6 +15,22 @@ use App\photo;
 
 class ctrl_foto extends Controller
 {
+    public function show() {
+        $query = Input::get('id');
+        $photo = new photo;
+        $photo = photo::find($query);
+        return $photo;
+    }
+
+    public function edit() {
+        $photo = new photo;
+        $photo = photo::where('id', Input::get('txt_edit_id'))->first();
+        $photo->judul = Input::get('txt_edit_judul');
+        $photo->jenis = Input::get('txt_edit_jenis');
+        $photo->user = Auth::User()->usr;
+        $photo->save();
+    }
+
      public function upload() {
     //Cek Ukuran lebih dari 2mb
 
@@ -87,6 +103,22 @@ class ctrl_foto extends Controller
         }
         else {
             return Redirect::to('/account');  
+        }
+    }
+
+    public function delete() {
+        $query = Input::get('id');
+        if (Auth::check() == true)
+        {
+            $photo = new photo;
+            $photo = photo::find($query);
+            $file_hapus = $photo->img;
+            $photo->delete();
+            File::delete($file_hapus);
+        }
+        else
+        {
+            return Redirect::to('/account');
         }
     }
 

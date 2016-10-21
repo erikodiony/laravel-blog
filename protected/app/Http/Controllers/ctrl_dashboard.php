@@ -14,6 +14,7 @@ use App\slide;
 use App\slide_product;
 use App\feedback;
 use App\poll;
+use App\photo;
 
 class ctrl_dashboard extends Controller
 {
@@ -64,7 +65,14 @@ class ctrl_dashboard extends Controller
    {
         if (Auth::check() == true) 
         {
-            return View('dashboard.photo');
+            $show_img_arsip = photo::where('jenis', 'Arsip')->get();
+            $show_img_galeri = photo::where('jenis', 'Galeri')->get();
+            $show_img_produk = photo::limit(5)->where('jenis', 'Produk')->get();
+            $show_img_slide = photo::limit(5)->where('jenis', 'Slide')->get();
+            return View('dashboard.photo')->with('show_img_arsip', $show_img_arsip)
+                                          ->with('show_img_galeri', $show_img_galeri)
+                                          ->with('show_img_produk', $show_img_produk)
+                                          ->with('show_img_slide', $show_img_slide);
         } 
         else
         {

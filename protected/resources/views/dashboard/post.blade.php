@@ -220,7 +220,7 @@
                                         @yield('form_gambar_hidden')
 
                                         <div class="form-group">
-                                            <label class="col-lg-2 col-md-2 col-xs-4 control-label"><i class="fa fa-pencil fa-fw fa-lg"></i> Judul :</label>
+                                            <label class="col-lg-2 col-md-2 col-xs-4 control-label"><i class="fa fa-thumb-tack fa-fw fa-lg"></i> Judul :</label>
                                             <div class="col-lg-10 col-md-10 col-xs-8">
                                                 {!! Form::text('txt_judul', '', ['class' => 'form-control'])!!}
                                             </div> 
@@ -348,7 +348,7 @@
 
 <!--Modal Gambar Hidden-->
 <div class="modal fade" id="mdl_gambar_hidden" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false"> 
-  <div class="modal-dialog modal-md">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
     <!-- Header-->
       <div class="modal-header">
@@ -601,7 +601,7 @@ $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
             {
                 data: null,
                 mRender: function(data,type,full){
-                return '<a href=" {{url()}}/articles/view?id='+full[0]+'" target="_blank"><i class="fa fa- fa-external-link fa-lg fa-fw"></i></a> | <a href=" http://somepage.php?UID='+full[0]+'"><i class="fa fa-eye fa-lg fa-fw"></i></a> | <a href="#mdl_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a> | <a href="#mdl_hapus" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-trash fa-lg fa-fw"></i></a>';
+                return '<a href=" {{url()}}/articles/view?id='+full[0]+'" target="_blank"><i class="fa fa- fa-external-link fa-lg fa-fw"></i></a> | <a href="#mdl_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a> | <a href="#mdl_hapus" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-trash fa-lg fa-fw"></i></a>';
                 }
             }
         ]
@@ -618,7 +618,7 @@ $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
             {
                 data: null,
                 mRender: function(data,type,full){
-                return '<a href=" {{url()}}/promos/view?id='+full[0]+'" target="_blank"><i class="fa fa- fa-external-link fa-lg fa-fw"></i></a> | <a href=" http://somepage.php?UID='+full[0]+'"><i class="fa fa-eye fa-lg fa-fw"></i></a> | <a href="#mdl_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a> | <a href="#mdl_hapus" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-trash fa-lg fa-fw"></i></a>';
+                return '<a href=" {{url()}}/promos/view?id='+full[0]+'" target="_blank"><i class="fa fa- fa-external-link fa-lg fa-fw"></i></a> | <a href="#mdl_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a> | <a href="#mdl_hapus" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-trash fa-lg fa-fw"></i></a>';
                 }
             }
         ]
@@ -635,7 +635,7 @@ $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
             {
                 data: null,
                 mRender: function(data,type,full){
-                return '<a href=" http://somepage.php?UID='+full[0]+'"><i class="fa fa-eye fa-lg fa-fw"></i></a> | <a href="#mdl_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a> | <a href="#mdl_hapus" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-trash fa-lg fa-fw"></i></a>';
+                return '<a href="#mdl_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a> | <a href="#mdl_hapus" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[1]+'"><i class="fa fa-trash fa-lg fa-fw"></i></a>';
                 }
             }
         ]
@@ -649,7 +649,7 @@ $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
             {
                 data: null,
                 mRender: function(data,type,full){
-                return '<a href=" {{url()}}/about" target="_blank"><i class="fa fa- fa-external-link fa-lg fa-fw"></i></a> | <a href=" http://somepage.php?UID='+full[0]+'"><i class="fa fa-eye fa-lg fa-fw"></i></a> | <a href="#mdl_laman_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[2]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a>';
+                return '<a href=" {{url()}}/about" target="_blank"><i class="fa fa- fa-external-link fa-lg fa-fw"></i></a> | <a href="#mdl_laman_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[2]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a>';
                 }
             }
         ]
@@ -663,7 +663,7 @@ $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
             {
                 data: null,
                 mRender: function(data,type,full){
-                return '<a href=" {{url()}}/portofolio" target="_blank"><i class="fa fa- fa-external-link fa-lg fa-fw"></i></a> | <a href=" http://somepage.php?UID='+full[0]+'"><i class="fa fa-eye fa-lg fa-fw"></i></a> | <a href="#mdl_laman_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[2]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a>';
+                return '<a href=" {{url()}}/portofolio" target="_blank"><i class="fa fa- fa-external-link fa-lg fa-fw"></i></a> | <a href="#mdl_laman_edit" data-toggle="modal" data-passing="'+full[0]+'" data-passing2="'+full[2]+'"><i class="fa fa-edit fa-lg fa-fw"></i></a>';
                 }
             }
         ]
