@@ -271,10 +271,10 @@
       <div id="carousel_foto" class="carousel slide" data-ride="carousel" style="height: 100%">
         <div class="carousel-inner" style="height: 100%">
           <?php $i = 1;?>
-          @foreach ($show_testi as $all_testi)
+          @foreach ($show_img as $all_img)
           <div id="item_img_{{$i++}}" class="item thumbnail-horizontal">
             <div class="active item thumbnail">
-              <img src="http://localhost/blog/assets/img/uploads/slide/47976.jpg">
+              <img src="{{url()}}/{{$all_img->img}}">
             </div>
           </div>
           @endforeach                                

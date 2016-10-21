@@ -33,6 +33,21 @@ $('#toUp').click(function(){
   return false;
   });
 
+$('#mdl_photo').on('show.bs.modal', function (event) {
+       $("#img_title").text('');
+        var a = $(event.relatedTarget);
+        var pass = a.data('pass');
+        var modal = $(this);
 
+        $.ajax({
+            type: 'GET',
+            url: 'photos/view',
+            data: 'q=' +pass,
+            dataType: 'JSON',
+            success: function(data){
+                 $("#img_path").attr("src", data.img);
+                 $("#img_title").append('<h3> ' + data.judul + '</h3>');
+                }
+        });
 
-
+});

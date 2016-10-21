@@ -37,79 +37,51 @@
 
 @section('isi-content')
   <div class="row" style="padding: 5px;">
+  @foreach($show_img as $all_img)
       <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
+          <a class="thumbnail" href="#mdl_photo" data-toggle="modal" data-target="#mdl_photo" data-pass="{{$all_img->id}}">
+              <img class="img-responsive" src="{{url()}}/{{$all_img->img}}" alt="{{$all_img->judul}}">
+          </a>          
       </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
-      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-          <a class="thumbnail" href="#">
-              <img class="img-responsive" src="http://localhost/blog/assets/img/uploads/slide/47976.jpg" alt="">
-          </a>
-      </div>
+      @endforeach
   </div>
 @endsection
 
+@section('popup')
+  <!--Modal Testimoni-->
+<div class="modal fade" id="mdl_photo" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false"> 
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    <!-- Header-->
+      <div class="modal-header">
+        <h4 class="modal-title"><i class="fa fa-photo fa-fw fa-lg"></i> Foto</h4>
+      </div>
+    <!-- Body --> 
+      <div class="modal-body">
+        <div class="row" style="margin:0px; margin-top:10px;">          
+            <div class="col-lg-12 col-xs-12" style="text-align:center;">
+              <div style="display:block; vertical-align:middle; text-align:center">
+                <img src="" id="img_path" class="img-responsive" style="margin: 0 auto;">
+              </div>
+              <div class="col-lg-12 col-xs-12" id="img_title" style="text-align:center;">
+                <h3></h3>
+              </div>
+            </div>
+        </div>
+      </div>
+    <!-- Footer -->
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Batal, Tutup Ini</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Modal Testimoni-->
+@endsection
+
 @section('skrip-js')
+  @yield('popup')
   {!! Html::script('assets/js/datatable/jquery.dataTables.min.js') !!}
   {!! Html::script('assets/js/datatable/dataTables.responsive.min.js') !!}
   {!! Html::script('assets/js/datatable/dataTables.bootstrap.min.js') !!}
   {!! Html::script('assets/js/home/isi/index.js') !!}
-
-  <script type="text/javascript">
-    $("#table-produk-1").dataTable({});
-    $("#table-produk-2").dataTable({});
-    $("#table-produk-3").dataTable({});
-    $("#table-produk-4").dataTable({});
-  </script>
 @endsection

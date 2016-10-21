@@ -107,8 +107,6 @@
 
 
 @section('mdl_custom')
-
-
 <!--Modal Kontak Kami-->
 <div class="modal fade" id="mdl_contactme" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false"> 
   <div class="modal-dialog modal-lg">

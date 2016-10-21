@@ -13,6 +13,7 @@ use App\product;
 use App\post;
 use App\menu;
 use App\feedback;
+use App\photo;
 use App\poll;
 use Datatables;
 use Input;
@@ -33,7 +34,8 @@ class ctrl_home extends Controller
         $show_limit_promo = post::limit(10)->where('jenis', 'Promo')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
         $menu_about = menu::all()->where('jenis', 'Tentang Kami')->first();
         $show_testi = feedback::where('status', 'Tampilkan')->get();
-        $show_poll = poll::all();
+        $show_img = photo::limit(5)->where('jenis', 'Galeri')->orderBy('id', 'DESC')->get();
+
         return View('home.index')->with('menu_about', $menu_about)
                                 ->with('show_contact',$show_contact)
                                 ->with('show_slide',$show_slide)
@@ -41,7 +43,7 @@ class ctrl_home extends Controller
                                 ->with('show_limit_promo', $show_limit_promo)
                                 ->with('show_limit_article', $show_limit_article)
                                 ->with('show_testi', $show_testi)
-                                ->with('show_poll', $show_poll);
+                                ->with('show_img', $show_img);
     }
 
     public function show_articles()
@@ -79,6 +81,14 @@ class ctrl_home extends Controller
                                     ->with('show_product_2', $show_product_2)
                                     ->with('show_product_3', $show_product_3)
                                     ->with('show_product_4', $show_product_4);
+    }
+
+    public function show_photos()
+    {
+        $show_contact = contact::all()->first();
+        $show_img = photo::where('jenis', 'Galeri')->orderBy('id', 'DESC')->get();
+        return View('foto.index')->with('show_contact', $show_contact)
+                                ->with('show_img', $show_img);
     }
 
     public function show_article()
@@ -157,6 +167,14 @@ class ctrl_home extends Controller
 
     }
 
+    public function show_photo()
+    {
+        $query = Input::get('q');
+        $photo = new photo;
+            $photo = photo::find($query);
+            return $photo;
+    }
+
     public function show_portofolio()
     {
         $show_contact = contact::all()->first();
@@ -201,11 +219,6 @@ class ctrl_home extends Controller
         }
     }
 
-    public function show_photo()
-    {
-        $show_contact = contact::all()->first();
-        return View('foto.index')->with('show_contact', $show_contact);
-    }
 
     public function send_testimoni(Request $req)
     {

@@ -61,12 +61,7 @@
             </ul>
               <div class="tab-content">
                 <div id="div-promo" class="tab-pane fade in active" role="tabpanel">
-                    <table id="table-promo" class="table dt-responsive" width="100%">
-                        <thead>
-                            <tr>
-                              <th><i class="fa fa-pencil fa-fw "></i>Judul</th>
-                            </tr>
-                        </thead>
+                    <table id="table-promo" class="table" width="100%">
                         <tbody>
                         @foreach ($show_limit_promo as $limit_promo)
                         <tr>
@@ -82,12 +77,7 @@
                     </table>
                 </div>
                 <div id="div-artikel" class="tab-pane fade" role="tabpanel">
-                    <table id="table-artikel" class="table dt-responsive" width="100%">
-                        <thead>
-                            <tr>
-                              <th><i class="fa fa-pencil fa-fw "></i>Judul</th>
-                            </tr>
-                        </thead>
+                    <table id="table-artikel" class="table" width="100%">
                         <tbody>
                         @foreach ($show_limit_article as $limit_article)
                         <tr>
@@ -114,26 +104,5 @@
   {!! Html::script('assets/js/datatable/dataTables.bootstrap.min.js') !!}
   {!! Html::script('assets/js/home/isi/index.js') !!}
 
-  <script type="text/javascript">
-    $("#table-promo").dataTable({
-      "paging":   false,
-        "ordering": false,
-        "info":     false,
-        "filter": false,
-         "bAutoWidth": false,
-        "aoColumns": [
-        { sWidth: '40%' },
-        { sWidth: '60%' }]
-    });
-    $("#table-artikel").dataTable({
-      "paging":   false,
-        "ordering": false,
-        "info":     false,
-        "filter": false,
-         "bAutoWidth": false,
-        "aoColumns": [
-        { sWidth: '40%' },
-        { sWidth: '60%' }]
-    });
-  </script>
+
 @endsection

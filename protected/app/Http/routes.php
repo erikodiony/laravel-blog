@@ -11,11 +11,12 @@ Route::get('products', 'ctrl_home@show_products');
 Route::get('portofolio', 'ctrl_home@show_portofolio');
 Route::get('about', 'ctrl_home@show_about');
 Route::get('search','ctrl_home@show_search');
-Route::get('photos', 'ctrl_home@show_photo');
+Route::get('photos', 'ctrl_home@show_photos');
 
 Route::get('articles/view', 'ctrl_home@show_article');
 Route::get('promos/view', 'ctrl_home@show_promo');
 Route::get('products/view', 'ctrl_home@show_product');
+Route::get('photos/view','ctrl_home@show_photo');
 
 Route::post('send_testimoni', 'ctrl_home@send_testimoni');
 Route::post('send_poll', 'ctrl_home@send_poll');
@@ -94,6 +95,10 @@ Route::post('account/dashboard/feedback/testimoni_edit', 'ctrl_umpan@edit_testim
 Route::get('account/dashboard/feedback/testimoni_delete', 'ctrl_umpan@delete_testimoni');
 //
 
-//Menu Dashboard (Status)
+//Menu Dashboard (Foto)
+Route::post('account/dashboard/photo/upload', 'ctrl_foto@upload');
+Route::get('account/dashboard/photo/upload/delete', 'ctrl_foto@upload_delete');
+Route::post('account/dashboard/photo/save', 'ctrl_foto@save');
+//
 
 ?>
