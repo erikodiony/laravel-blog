@@ -127,7 +127,7 @@ class ctrl_home extends Controller
         $show_contact = contact::all()->first();
         $show_limit_article = post::limit(5)->where('jenis', 'Artikel')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
         $show_limit_promo = post::limit(5)->where('jenis', 'Promo')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
-        $show_byid_article = post::all()->where('jenis', 'Artikel')->where('status', 'Publikasi')->where('id', $id_article)->first();
+        $show_byid_article = post::all()->where('jenis', 'Artikel')->where('status', 'Publikasi')->where('id', (int)$id_article)->first();
         if ($show_byid_article == null)
         {
             return Redirect::to('/articles');
@@ -149,7 +149,7 @@ class ctrl_home extends Controller
         $show_contact = contact::all()->first();
         $show_limit_article = post::limit(5)->where('jenis', 'Artikel')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
         $show_limit_promo = post::limit(5)->where('jenis', 'Promo')->where('status', 'Publikasi')->orderBy('id', 'DESC')->get();
-        $show_byid_promo = post::all()->where('jenis', 'Promo')->where('status', 'Publikasi')->where('id', $id_promo)->first();
+        $show_byid_promo = post::all()->where('jenis', 'Promo')->where('status', 'Publikasi')->where('id', (int)$id_promo)->first();
         if ($show_byid_promo == null)
         {
             return Redirect::to('/promos');
@@ -180,7 +180,7 @@ class ctrl_home extends Controller
         $show_limit_produk_3 = product::limit(5)->where('tag', $label_produk[2])->where('status', 'Publikasi')->orderBy('id','DESC')->get();
         $show_limit_produk_4 = product::limit(5)->where('tag', $label_produk[3])->where('status', 'Publikasi')->orderBy('id','DESC')->get();
         
-        $show_byid_produk = product::all()->where('status', 'Publikasi')->where('id', $id_produk)->first();
+        $show_byid_produk = product::all()->where('status', 'Publikasi')->where('id', (int)$id_produk)->first();
         if ($show_byid_produk == null)
         {
             return Redirect::to('/products');
