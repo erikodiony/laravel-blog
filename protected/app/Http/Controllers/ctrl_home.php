@@ -28,7 +28,7 @@ class ctrl_home extends Controller
 
     private function check_log()
     {        
-        $country = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip={request()->ip()}"));
+        $country = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=".request()->ip()));
         if ($country->geoplugin_countryName == "")
         {
             $country_name = "-";
