@@ -10,10 +10,33 @@ use Input;
 use Auth;
 use Validator;
 use Redirect;
-use App\about; //Eloquent DB 
+use App\stat; //Eloquent DB
 
 class ctrl_login extends Controller
 {
+    private function check_log()
+    {        
+        $country = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip={request()->ip()}"));
+        if ($country->geoplugin_countryName == "")
+        {
+            $country_name = "-";
+        }
+        else {
+            $country_name = $country->geoplugin_countryName;
+        }
+        
+        $log_check = stat::where('token', Input::get('_token'))->where('user', Auth::User()->usr)->exists();
+        if ($log_check != true) {
+            $stat = new stat;
+            $stat->ip = request()->ip();
+            $stat->device = request()->header('User-Agent');
+            $stat->token = session()->getId();
+            $stat->country = $country_name;
+            $stat->user = Auth::User()->usr;
+            $stat->save();
+        }
+        else{}
+    }
 
     public function show()
 	{
@@ -85,16 +108,18 @@ class ctrl_login extends Controller
         'password'  => Input::get('pass'),
         ));
 
-        if (Auth::check() == true) 
+        $q = 'success';
+
+        if (Auth::check() == true)
         {
-            $q = 'success';
+            $this->check_log();                
             return Redirect::to('/account/login?msg='.$q)->with('msg_ok','SUCCESS : Anda berhasil masuk Sistem!');
-        } 
-        else 
-        {
+        }
+        else {
             $q = 'error';
             return Redirect::to('/account/login?msg='.$q)->with('msg_err','ERROR : Nama Pengguna atau Kata Sandi salah!');
         }
+
     }
 
 }

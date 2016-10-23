@@ -9,12 +9,14 @@ use App\Http\Controllers\Controller;
 use View;
 use Auth;
 use Redirect;
+use Carbon\Carbon;
 use App\contact;
 use App\slide;
 use App\slide_product;
 use App\feedback;
 use App\poll;
 use App\photo;
+use App\stat;
 
 class ctrl_dashboard extends Controller
 {
@@ -82,9 +84,30 @@ class ctrl_dashboard extends Controller
 
    public function show_stat()
    {
+      $dt_hari_ini = Carbon::now()->toDateString(); //Hari Ini
+      $dt_minggu_ini = Carbon::now()->addWeeks(-1)->toDateString(); //Minggu Ini (Tanggal Lalu)
+      $dt_bulan_ini = substr(Carbon::now()->toDateString(), 0,7); //Bulan Ini
+      $dt_tahun_ini = substr(Carbon::now()->toDateString(), 0,4); //Tahun Ini
+
         if (Auth::check() == true) 
         {
-          return View('dashboard.stat');
+          $show_log_admin = stat::where('user', 'Admin')->get();
+          $show_log_guest = stat::where('user', 'Pengunjung')->get();
+          $data = array(
+            'show_log_admin_harian' => stat::where('user', 'Admin')->where('created_at', 'LIKE', '%'.$dt_hari_ini.'%')->count(),
+            'show_log_admin_mingguan' => stat::where('user', 'Admin')->where('created_at', '>=', $dt_minggu_ini . ' 00:00:00')->where('created_at', '<=', $dt_hari_ini . ' 23:59:59')->count(),
+            'show_log_admin_bulanan' => stat::where('user', 'Admin')->where('created_at', 'LIKE', '%'.$dt_bulan_ini.'%')->count(),
+            'show_log_admin_tahunan' => stat::where('user', 'Admin')->where('created_at', 'LIKE', '%'.$dt_tahun_ini.'%')->count(),
+
+            'show_log_guest_harian' => stat::where('user', 'Pengunjung')->where('created_at', 'LIKE', '%'.$dt_hari_ini.'%')->count(),
+            'show_log_guest_mingguan' => stat::where('user', 'Pengunjung')->where('created_at', '>=', $dt_minggu_ini . ' 00:00:00')->where('created_at', '<=', $dt_hari_ini . ' 23:59:59')->count(),
+            'show_log_guest_bulanan' => stat::where('user', 'Pengunjung')->where('created_at', 'LIKE', '%'.$dt_bulan_ini.'%')->count(),
+            'show_log_guest_tahunan' => stat::where('user', 'Pengunjung')->where('created_at', 'LIKE', '%'.$dt_tahun_ini.'%')->count(),
+          );
+
+          return View('dashboard.stat')->with('show_log_admin', $show_log_admin)
+                                      ->with('show_log_guest', $show_log_guest)
+                                      ->with($data);
         } 
         else
         {

@@ -103,7 +103,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr width="100%">
                     <td width="25%">Bagus</td>
                     <td width="{{($show_param1_a / $show_poll->count()) * 100}}%" style="text-align:left;"><div style="width:{{($show_param1_a / $show_poll->count()) * 100}}%; height:10px; background:green;"></div><label>Total: {{$show_param1_a}}</label></td>
                     <td width="25%">{{($show_param1_a / $show_poll->count()) * 100}}%</td>
@@ -145,7 +145,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr width="100%">
                     <td width="25%">Bagus</td>
                     <td width="{{($show_param1_b / $show_poll->count()) * 100}}%" style="text-align:left;"><div style="width:{{($show_param1_b / $show_poll->count()) * 100}}%; height:10px; background:green;"></div><label>Total: {{$show_param1_b}}</label></td>
                     <td width="25%">{{($show_param1_b / $show_poll->count()) * 100}}%</td>
@@ -187,7 +187,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr width="100%">
                     <td width="25%">Bagus</td>
                     <td width="{{($show_param1_c / $show_poll->count()) * 100}}%" style="text-align:left;"><div style="width:{{($show_param1_c / $show_poll->count()) * 100}}%; height:10px; background:green;"></div><label>Total: {{$show_param1_c}}</label></td>
                     <td width="25%">{{($show_param1_c / $show_poll->count()) * 100}}%</td>
