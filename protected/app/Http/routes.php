@@ -95,6 +95,10 @@ Route::post('account/dashboard/feedback/testimoni_edit', 'ctrl_umpan@edit_testim
 Route::get('account/dashboard/feedback/testimoni_delete', 'ctrl_umpan@delete_testimoni');
 //
 
+//Menu Dashboard (Feedback)
+Route::get('account/dashboard/stat/show', 'ctrl_stat@show');
+//
+
 //Menu Dashboard (Foto)
 Route::post('account/dashboard/photo/upload', 'ctrl_foto@upload');
 Route::get('account/dashboard/photo/upload/delete', 'ctrl_foto@upload_delete'); //Hapus Foto Upload Preview

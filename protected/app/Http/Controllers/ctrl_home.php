@@ -15,6 +15,7 @@ use App\menu;
 use App\feedback;
 use App\photo;
 use App\poll;
+use App\stat;
 use Datatables;
 use Input;
 use Redirect;
@@ -23,6 +24,30 @@ class ctrl_home extends Controller
 {
     public function pageError() {
         return View('404.index');
+    }
+
+    private function check_log()
+    {        
+        $country = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip={request()->ip()}"));
+        if ($country->geoplugin_countryName == "")
+        {
+            $country_name = "-";
+        }
+        else {
+            $country_name = $country->geoplugin_countryName;
+        }
+        
+        $log_check = stat::where('token', session()->getId())->where('user', 'Pengunjung')->exists();
+        if ($log_check != true) {
+            $stat = new stat;
+            $stat->ip = request()->ip();
+            $stat->device = request()->header('User-Agent');
+            $stat->token = session()->getId();
+            $stat->country = $country_name;
+            $stat->user = 'Pengunjung';
+            $stat->save();
+        }
+        else{}
     }
 
     public function show_index()
@@ -36,6 +61,7 @@ class ctrl_home extends Controller
         $show_testi = feedback::where('status', 'Tampilkan')->get();
         $show_img = photo::limit(5)->where('jenis', 'Galeri')->orderBy('id', 'DESC')->get();
 
+        $this->check_log();
         return View('home.index')->with('menu_about', $menu_about)
                                 ->with('show_contact',$show_contact)
                                 ->with('show_slide',$show_slide)
@@ -43,13 +69,14 @@ class ctrl_home extends Controller
                                 ->with('show_limit_promo', $show_limit_promo)
                                 ->with('show_limit_article', $show_limit_article)
                                 ->with('show_testi', $show_testi)
-                                ->with('show_img', $show_img);
+                                ->with('show_img', $show_img);                
     }
 
     public function show_articles()
     {
         $show_contact = contact::all()->first();
         $show_all_article = post::all()->where('jenis', 'Artikel')->where('status', 'Publikasi');
+        $this->check_log();
         return View('promo-artikel.index-artikel')->with('show_contact',$show_contact)
                                                     ->with('show_all_article', $show_all_article);
     }
@@ -58,6 +85,7 @@ class ctrl_home extends Controller
     {
         $show_contact = contact::all()->first();
         $show_all_promo = post::all()->where('jenis', 'Promo')->where('status', 'Publikasi');
+        $this->check_log();
         return View('promo-artikel.index-promo')->with('show_contact', $show_contact)
                                                     ->with('show_all_promo', $show_all_promo);
     }
@@ -75,6 +103,7 @@ class ctrl_home extends Controller
         $show_product_2 = product::all()->where('status', 'Publikasi')->where('tag', $label_produk[1]);
         $show_product_3 = product::all()->where('status', 'Publikasi')->where('tag', $label_produk[2]);
         $show_product_4 = product::all()->where('status', 'Publikasi')->where('tag', $label_produk[3]);
+        $this->check_log();
         return View('produk.index')->with('show_contact', $show_contact)
                                     ->with('show_slide_product', $show_slide_product)
                                     ->with('show_product_1', $show_product_1)
@@ -87,6 +116,7 @@ class ctrl_home extends Controller
     {
         $show_contact = contact::all()->first();
         $show_img = photo::where('jenis', 'Galeri')->orderBy('id', 'DESC')->get();
+        $this->check_log();
         return View('foto.index')->with('show_contact', $show_contact)
                                 ->with('show_img', $show_img);
     }
@@ -104,6 +134,7 @@ class ctrl_home extends Controller
         }
         else 
         {
+            $this->check_log();
             return View('promo-artikel.byid-artikel')
                 ->with('show_contact', $show_contact)
                 ->with('show_limit_article', $show_limit_article)
@@ -125,6 +156,7 @@ class ctrl_home extends Controller
         }
         else 
         {
+            $this->check_log();
             return View('promo-artikel.byid-promo')
                 ->with('show_contact', $show_contact)
                 ->with('show_limit_article', $show_limit_article)
@@ -155,6 +187,7 @@ class ctrl_home extends Controller
         }
         else 
         {
+            $this->check_log();
             return View('produk.byid-produk')
                 ->with('show_contact', $show_contact)
                 ->with('show_slide_product', $show_slide_product)
@@ -180,6 +213,7 @@ class ctrl_home extends Controller
         $show_contact = contact::all()->first();
         $menu_portofolio = menu::all()->where('jenis', 'Portofolio')->first();
         $menu_about = menu::all()->where('jenis', 'Tentang Kami')->first();
+        $this->check_log();
         return View('portofolio.index')
             ->with('show_contact', $show_contact)
             ->with('menu_portofolio', $menu_portofolio)
@@ -191,6 +225,7 @@ class ctrl_home extends Controller
         $show_contact = contact::all()->first();
         $menu_portofolio = menu::all()->where('jenis', 'Portofolio')->first();
         $menu_about = menu::all()->where('jenis', 'Tentang Kami')->first();
+        $this->check_log();
         return View('about.index')
             ->with('show_contact', $show_contact)
             ->with('menu_portofolio', $menu_portofolio)
@@ -210,6 +245,7 @@ class ctrl_home extends Controller
             $all_result_article = post::where('status', 'Publikasi')->where('jenis','Artikel')->where('judul', 'LIKE', '%'.$query.'%')->get();
             $all_result_promo = post::where('status', 'Publikasi')->where('jenis','Promo')->where('judul', 'LIKE', '%'.$query.'%')->get();
             $all_result_product = product::where('status', 'Publikasi')->where('judul', 'LIKE', '%'.$query.'%')->get();
+            $this->check_log();
             return View('search.index')
                     ->with('query', $query)
                     ->with('show_contact', $show_contact)

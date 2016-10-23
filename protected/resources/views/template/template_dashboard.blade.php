@@ -1,12 +1,3 @@
-@section('f_search')
-{!! Form::open(['url' => '/account/dashboard/search', 'method' => 'POST', 'class' => 'navbar-form navbar-right']) !!}
-    <div class="input-group col-md-12">
-        {!! Form::text('user', null, ['placeholder' => 'Produk / Artikel...', 'class' => 'form-control', 'id' => 'input_cari'])!!}
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Cari</button>
-            </span>
-{!! Form::close() !!}
-@endsection
 
 @section('btn_exit')
 <a href="" id="navbar_kanan" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-out"></span> Keluar</a>
@@ -52,7 +43,6 @@
                 <li><a id="navbar_kanan" style="cursor:default; margin-right:-10px;"><i class="fa fa-user fa-stack-3x"></i> Masuk sebagai <?php echo Auth::User()->usr; ?></a></li>
                 <li>@yield('btn_exit')</li>
             </ul>
-            @yield('f_search')
         </div>
     </nav>
 
